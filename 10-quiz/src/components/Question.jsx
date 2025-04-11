@@ -19,6 +19,7 @@ export default function Question({idx, handleOnTimeUp, onAnswerSelected}) {
     return (
         <>
         <QuestionTimer
+            key={time}
             time={time}
             onTimeUp={handleOnTimeUp}
             mode={ answered ? 'answered' : null}

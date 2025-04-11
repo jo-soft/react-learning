@@ -2,9 +2,9 @@ import quizComplete from "../assets/quiz-complete.png"
 export default function Summary({ answers }) {
 
     const total = answers.length;
-    const correctAnswers = (answers.filter((answer) => answer === true).length / total).toFixed(2);
-    const incorrectAnswers = (answers.filter((answer) => answer === false).length / total).toFixed(2);
-    const skippedAnswers = (answers.filter((answer) => answer === null).length / total).toFixed(2);
+    const correctAnswers = (10 * answers.filter((answer) => answer === true).length / total).toFixed(2);
+    const incorrectAnswers = (10 * answers.filter((answer) => answer === false).length / total).toFixed(2);
+    const skippedAnswers = (10 * answers.filter((answer) => answer === null).length / total).toFixed(2);
 
     return (
         <div id="summary">
