@@ -1,4 +1,5 @@
 import classes from './Card.module.css';
+import PropTypes from "prop-types";
 
 const Card = (props) => {
   return (
@@ -9,5 +10,10 @@ const Card = (props) => {
     </section>
   );
 };
+
+Card.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired,
+}
 
 export default Card;

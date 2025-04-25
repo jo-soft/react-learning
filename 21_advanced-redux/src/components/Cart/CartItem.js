@@ -1,6 +1,7 @@
 import classes from './CartItem.module.css';
 import {useDispatch} from "react-redux";
 import { cartActions } from "../../store/cartSlice";
+import PropTypes from "prop-types";
 
 const CartItem = ({ title, quantity, total, price } ) => {
 
@@ -36,5 +37,12 @@ const CartItem = ({ title, quantity, total, price } ) => {
     </li>
   );
 };
+
+CartItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+}
 
 export default CartItem;

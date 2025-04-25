@@ -8,7 +8,7 @@ const Products = () => {
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
       <ul>
-          { products.map((product, idx) => (
+          { products.map((product) => (
               <ProductItem
                   key={product.id}
                   title={product.title}

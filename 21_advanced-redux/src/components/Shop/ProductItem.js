@@ -2,6 +2,7 @@ import Card from '../UI/Card';
 import classes from './ProductItem.module.css';
 import { cartActions } from '../../store/cartSlice';
 import {useDispatch} from "react-redux";
+import PropTypes from "prop-types";
 
 const ProductItem = ({ title, price, description }) => {
 
@@ -26,5 +27,11 @@ const ProductItem = ({ title, price, description }) => {
     </li>
   );
 };
+
+ProductItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+}
 
 export default ProductItem;
