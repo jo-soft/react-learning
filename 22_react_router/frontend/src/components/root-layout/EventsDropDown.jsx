@@ -11,7 +11,7 @@ export default function EventsDropDown() {
 
     return (
         <div className={classes.events}>
-            <NavLink className={activeClassName} to='events'>Events</NavLink>
+            <NavLink className={activeClassName} to='/events'>Events</NavLink>
             <div className={classes.events_wrapper}>
                 <ul className={classes.events_list}>
                     {events.map(evt => (
