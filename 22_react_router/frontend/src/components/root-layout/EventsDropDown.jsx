@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {EVENT_CTX} from "../../context/EventsCtx";
 import  {NavLink, Link} from "react-router";
 import classes from './EventsDropDown.module.css';
-import rootLayoutClasses from './RootLayout.module.css';
+import rootLayoutClasses from './MainNavigation.module.css';
 
 export default function EventsDropDown() {
     const { events } = useContext(EVENT_CTX);

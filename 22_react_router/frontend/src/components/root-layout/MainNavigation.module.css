@@ -1,0 +1,29 @@
+.header {
+  max-width: 60rem;
+  margin: auto;
+  padding: 2rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  align-items: center;
+  padding: 1rem;
+
+  h1 {
+    color: var(--color-primary-200);
+  }
+}
+
+.active {
+  color: var(--color-gray-400);
+  font-weight: 600;
+}

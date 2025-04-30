@@ -1,4 +1,6 @@
 import classes from './MainNavigation.module.css';
+import {NavLink} from "react-router";
+import EventsDropDown from "./EventsDropDown";
 
 function MainNavigation() {
   return (
@@ -6,10 +8,10 @@ function MainNavigation() {
       <nav>
         <ul className={classes.list}>
           <li>
-            <a>Home</a>
+            <NavLink to='/' className={({isActive}) => isActive ? classes.active : undefined}>Home</NavLink>
           </li>
           <li>
-            <a>Events</a>
+            <EventsDropDown/>
           </li>
         </ul>
       </nav>
