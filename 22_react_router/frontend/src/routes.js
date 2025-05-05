@@ -4,7 +4,7 @@ import Event from "./pages/Event";
 import Home from "./pages/Home";
 import EditEvent from "./pages/EditEvent";
 import NewEvent from "./pages/NewEvent";
-import {Outlet} from "react-router";
+import EventsLayout from "./components/EventsLayout";
 
 export const ROUTES = [
     {
@@ -17,7 +17,7 @@ export const ROUTES = [
             },
             {
                 path: 'events',
-                element: <Outlet/>,
+                element: <EventsLayout/>,
                 children: [
                     {
                         index: true,
@@ -25,7 +25,6 @@ export const ROUTES = [
                     },
                     {
                         path: ':eventId',
-                        element: <Outlet/>,
                         children: [
                             {
                                 index:  true,

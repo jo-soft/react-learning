@@ -14,7 +14,7 @@
 
 nav {
   display: grid;
-  grid-template-columns: 1fr 11fr;
+  grid-template-columns: repeat(auto-fit, 1fr);
   align-items: center;
   padding: 1rem;
 
