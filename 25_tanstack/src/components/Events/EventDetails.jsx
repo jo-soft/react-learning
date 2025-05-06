@@ -18,7 +18,7 @@ export default function EventDetails() {
         queryFn: ({signal}) => fetchEvent({
           signal, id: eventId
         }),
-      queryKey: ['event', eventId],
+      queryKey: ['events', eventId],
       }
   )
 
@@ -29,7 +29,10 @@ export default function EventDetails() {
   } = useMutation({
       mutationFn: () => deleteEvent({ id: eventId}),
       onSuccess: async () => {
-          await queryClient.invalidateQueries({ queryKey: ['events', eventId] });
+          await queryClient.invalidateQueries({
+              queryKey: ['events', eventId],
+              refetchType: 'none'
+          });
           navigate('/events');
       }
   });
