@@ -237,6 +237,12 @@ ul {
   object-fit: cover;
 }
 
+#event-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 #event-details header {
   width: 40rem;
   margin: 2rem auto;
