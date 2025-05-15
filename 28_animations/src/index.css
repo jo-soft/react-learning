@@ -280,6 +280,7 @@ main {
   display: inline-block;
   font-size: 0.85rem;
   margin-left: 0.25rem;
+  transition: transform 0.2s ease-in-out;
 }
 
 .challenge-item-details.expanded .challenge-item-details-icon {
@@ -306,6 +307,19 @@ main {
   background-color: #0f3cef;
 }
 
+@keyframes modal-in {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 100%;
+    opacity: 1;
+  }
+  
+}
+
 .modal {
   top: 10%;
   border-radius: 6px;
@@ -313,6 +327,7 @@ main {
   width: 30rem;
   max-width: 90%;
   z-index: 10;
+  animation: modal-in 0.2s ease-out forwards;
 }
 
 .modal h2 {
