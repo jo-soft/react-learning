@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { ChallengesContext } from '../store/challenges-context.jsx';
 import ChallengeItem from './ChallengeItem.jsx';
 import ChallengeTabs from './ChallengeTabs.jsx';
+import {motion, AnimatePresence} from "framer-motion";
 
 export default function Challenges() {
   const { challenges } = useContext(ChallengesContext);
@@ -40,19 +41,33 @@ export default function Challenges() {
         onSelectType={handleSelectType}
         selectedType={selectedType}
       >
+        <AnimatePresence mode='wait'>
         {displayedChallenges.length > 0 && (
-          <ol className="challenge-items">
+          <motion.ol
+              className="challenge-items"
+              key='challenge-items'
+              variants={{
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              exit='hidden'
+              initial='hidden'
+              animate='visible'
+          >
             {displayedChallenges.map((challenge) => (
-              <ChallengeItem
-                key={challenge.id}
-                challenge={challenge}
-                onViewDetails={() => handleViewDetails(challenge.id)}
-                isExpanded={expanded === challenge.id}
-              />
+              <AnimatePresence>
+                <ChallengeItem
+                  key={challenge.id}
+                  challenge={challenge}
+                  onViewDetails={() => handleViewDetails(challenge.id)}
+                  isExpanded={expanded === challenge.id}
+                />
+            </AnimatePresence>
             ))}
-          </ol>
+          </motion.ol>
         )}
-        {displayedChallenges.length === 0 && <p>No challenges found.</p>}
+        {displayedChallenges.length === 0 && <p key='empty'>No challenges found.</p>}
+        </AnimatePresence>
       </ChallengeTabs>
     </div>
   );
